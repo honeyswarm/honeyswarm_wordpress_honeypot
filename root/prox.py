@@ -151,6 +151,8 @@ async def handler(request):
             )
         return ws_server
 
-app = web.Application()
+app = web.Application(
+    client_max_size=10000000
+)
 app.router.add_route('*','/{proxyPath:.*}', handler)
 web.run_app(app,port=80)
