@@ -27,7 +27,7 @@ baseUrl = 'http://0.0.0.0:8080'
 
 async def hpfeeds_publish(event_message):
     async with ClientSession(HPFSERVER, HPFPORT, HPFIDENT, HPFSECRET) as client:
-        client.publish('http.sessions', json.dumps(event_message).encode('utf-8'))
+        client.publish('wordpress.sessions', json.dumps(event_message).encode('utf-8'))
     return True
 
 async def handler(request):
