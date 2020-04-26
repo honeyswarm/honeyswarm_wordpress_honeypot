@@ -17,7 +17,6 @@ HPFIDENT = os.environ.get("HPFIDENT", "testing")
 HPFSECRET = os.environ.get("HPFSECRET", "secretkey")
 HIVEID = os.environ.get("HIVEID", "UnknownHive")
 
-
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
@@ -57,7 +56,7 @@ async def handler(request):
 
     event_message = {
         "hive_id": HIVEID,
-        "src_ip": request.remote,
+        "source_ip": request.remote,
         "http_remote": request.remote,
         "http_host": request.host,
         "http_version": http_version,
