@@ -19,6 +19,5 @@ sleep 5
 cd /root && python3.8 /root/plugin_installer.py
 # Add any SQL files
 
-tail -f /var/log/apache2/error.log
-
-# run MITM stuff here. 
+# Run the Proxy and reporting
+cd /root && python3.8 /root/prox.py
